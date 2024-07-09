@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Details - Eat Nearby</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    color: #5cb85c;
+    margin-bottom: 20px;
+}
+
+#restaurant-details h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+#restaurant-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#restaurant-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Details</h1>
+        <div id="restaurant-details">
+            <!-- Restaurant details will be dynamically inserted here -->
+        </div>
+        <button onclick="window.location.href='i.html'">Back</button>
+        <button onclick="window.location.href='home.html'">Home</button>
+        
+    </div>
+
+    <script>
+        // Sample data for demonstration
+        const restaurants = [
+            { id: 1, name: "Restaurant  1", rating: 4.5, description: "Panjabi , Kathiyavadi , Gujarati", address: "12 Orenge mall,chandKheda , Ahmedabad City", image: "1.jpeg" },
+            { id: 2, name: "Restaurant  2", rating: 4.2, description: "Chinese , Panjabi South Indian", address: "food complex Sabarmati,  Ahmedabad", image: "2.jpeg" },
+            { id: 3, name: "Restaurant  3", rating: 4.0, description: "Pizza, Burger, Italian , French ", address: "IOC Road, D-cabin , Ahmedabad", image: "5.jpeg" }
+            // Add more restaurants with details as needed
+        ];
+
+        // Get the restaurant ID from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const restaurantId = parseInt(urlParams.get('id'));
+
+        // Find the restaurant with the matching ID
+        const restaurant = restaurants.find(r => r.id === restaurantId);
+
+        // Display the restaurant details on the page
+        const restaurantDetailsContainer = document.getElementById("restaurant-details");
+        if (restaurant) {
+            restaurantDetailsContainer.innerHTML = `
+                <h2>${restaurant.name}</h2>
+                <img src="${restaurant.image}" alt="${restaurant.name}">
+                <p>Rating: ${restaurant.rating}</p>
+                <p>Description: ${restaurant.description}</p>
+                <p>Address: ${restaurant.address}</p>
+            `;
+        } else {
+            restaurantDetailsContainer.innerHTML = "<p>Restaurant not found.</p>";
+        }
+    </script>
+</body>
+</html>

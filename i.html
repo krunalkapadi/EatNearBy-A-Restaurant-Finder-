@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants - Eat Nearby</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    background-image: url(3.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: rgb(233, 118, 11);
+    background-color: #fff;
+    
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+
+ul li {
+    background: #d7cbcb;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul li a {
+    display: block;
+    padding: 15px;
+    color: #cd7313;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #f9f9f9;
+    color: #4cae4c;
+}
+
+button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <h1>Restaurants Near You</h1>
+        <ul>
+            <li><a href="details.html?id=1">Restaurant  1</a></li>
+            <li><a href="details.html?id=2">Restaurant  2</a></li>
+            <li><a href="details.html?id=3">Restaurant  3</a></li>
+            <!-- Add more restaurants as needed -->
+        </ul>
+
+        <button onclick="window.location.href='home.html'">Home</button>
+
+    </div>
+</body>
+</html>
